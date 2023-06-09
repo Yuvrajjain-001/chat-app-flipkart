@@ -1,0 +1,101 @@
+/* styles.css */
+
+/* App Styles */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Chat List Styles */
+.chat-list {
+  flex: 0 0 300px;
+  background-color: #f1f3f6;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.chat-list-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: ${isSelected ? '#e0e0e0' : 'transparent'};
+}
+
+.timestamp {
+  margin-left: auto;
+  color: #878787;
+}
+
+/* Chat Window Styles */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f3f6;
+}
+
+.message-container {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.message {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #e0e0e0;
+  margin-bottom: 8px;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f3f6;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.input-box button {
+  padding: 10px;
+}
+
+/* ChatList Heading Styles */
+.filter-heading {
+  color: #212121;
+}
+
+/* ChatList Primary Text Color */
+.chat-item-info h4 {
+  color: #000000;
+}
+
+/* ChatList Secondary Text Color */
+.chat-item-info p {
+  color: #878787;
+}
+
+/* ChatList Divider Color */
+.chat-list-item:not(:last-child) {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Flipkart Blue */
+.flipkart-blue {
+  color: #027CD5;
+}
+
+/* OptionedMessage Background */
+.optioned-message {
+  background-color: #f5f5f5;
+}

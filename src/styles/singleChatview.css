@@ -1,0 +1,58 @@
+.single-chat-view {
+  padding: 10px;
+}
+
+.chat-info {
+  background-color: #f5f5f5;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+}
+
+.chat-header img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.chat-title {
+  font-weight: bold;
+}
+
+.chat-order-id {
+  color: #666;
+  margin-top: 5px;
+}
+
+.message-list {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.message-item {
+  margin-bottom: 10px;
+}
+
+.message {
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+.message-timestamp {
+  color: #666;
+  margin-top: 5px;
+}
+
+.no-chat-selected,
+.no-messages {
+  text-align: center;
+  color: #999;
+  margin-top: 20px;
+}
