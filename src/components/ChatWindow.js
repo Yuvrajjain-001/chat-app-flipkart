@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import SingleChatView from './SignleChatView';
-import '../styles/chatwindow.css'
+import SingleChatView from './SingleChatView';
+import '../styles/chatwindow.css';
+
 const ChatWindow = () => {
   const [chats, setChats] = useState(null);
   const [selectedChatId, setSelectedChatId] = useState(null);
@@ -32,17 +33,25 @@ const ChatWindow = () => {
       chat.orderId.toLowerCase().includes(filter.toLowerCase())
   );
 
+  const formatDate = (timestamp) => {
+    const date = new Date(timestamp);
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
   return (
     <div className="chat-window">
-      <div className="chat-filters">
-        <input
-          type="text"
-          placeholder="Filter by Chat Title / Order ID"
-          value={filter}
-          onChange={handleFilterChange}
-        />
-      </div>
       <div className="chat-list">
+        <div className="chat-filters">
+          <input
+            type="text"
+            placeholder="Filter by Chat Title / Order ID"
+            value={filter}
+            onChange={handleFilterChange}
+          />
+        </div>
         {filteredChats.map((chat) => (
           <div
             key={chat.id}
@@ -65,21 +74,13 @@ const ChatWindow = () => {
       <div className="chat-messages">
         {selectedChatId ? (
           <SingleChatView chat={chats.find((chat) => chat.id === selectedChatId)} />
+          
         ) : (
           <div className="no-chat-selected">Select a chat to view messages</div>
         )}
       </div>
     </div>
   );
-};
-
-// Helper function to format timestamp to DD/MM/YYYY format
-const formatDate = (timestamp) => {
-  const date = new Date(timestamp);
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
-  return `${day}/${month}/${year}`;
 };
 
 export default ChatWindow;

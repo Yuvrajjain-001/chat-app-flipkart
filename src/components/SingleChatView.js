@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/singleChatview.css'
+import InputBox from './InputBox';
 
 const SingleChatView = ({ chat }) => {
   if (!chat) {
@@ -7,7 +8,9 @@ const SingleChatView = ({ chat }) => {
   }
 
   const { title, imageURL, orderId, messageList } = chat;
-
+const onSendMessage=(e)=>{
+return ""
+}
   return (
     <div className="single-chat-view">
       <div className="chat-info">
@@ -19,17 +22,21 @@ const SingleChatView = ({ chat }) => {
           </div>
         </div>
       </div>
-      <div className="message-list">
+{        console.log("message",messageList)
+}      <div className="message-list">
         {messageList.length > 0 ? (
           messageList.map((message, index) => (
             <div key={index} className="message-item">
-              <div className="message">{message.content}</div>
-              <div className="message-timestamp">{formatTimestamp(message.timestamp)}</div>
+              <div className="message">{message.message} {formatTimestamp(message.timestamp)}</div>
+             
+              {/* <span className="message-timestamp">{formatTimestamp(message.timestamp)}</span> */}
             </div>
           ))
         ) : (
           <div className="no-messages">No messages</div>
         )}
+          <InputBox onSendMessage={onSendMessage}/>
+        
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 import { filter } from 'lodash';
+import '../styles/chatList.css'
 
 const ChatList = ({ chats, selectedChatId, onSelectChat }) => {
   const [searchQuery, setSearchQuery] = useState('');
