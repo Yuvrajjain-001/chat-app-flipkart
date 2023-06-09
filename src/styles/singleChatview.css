@@ -1,11 +1,14 @@
 .single-chat-view {
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .chat-info {
+  padding: 16px;
   background-color: #f5f5f5;
-  padding: 10px;
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .chat-header {
@@ -14,9 +17,10 @@
 }
 
 .chat-header img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 16px;
 }
 
 .chat-title {
@@ -24,48 +28,49 @@
 }
 
 .chat-order-id {
-  color: #666;
-  margin-top: 5px;
+  color: gray;
 }
 
 .message-list {
-  background-color: #fff;
-  padding: 10px;
-  border: 1px solid #ddd;
-  max-height: 400px;
-  overflow-y: auto;
-    list-style: none;
-  padding: 0;
-  margin: 0;
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding: 16px;
 }
 
 .message-item {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.message {
-  background-color: #f5f5f5;
-  padding: 10px;
+.message-item.left {
+  text-align: left;
+}
+
+.message-item.right {
+  text-align: right;
 }
 
 .message-timestamp {
-  color: #666;
-  margin-top: 5px;
-}
-.message-item .message-content {
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-radius: 5px;
+  font-size: 12px;
+  color: gray;
+  margin-left: 8px;
 }
 
-.message-item .message-date {
-  font-size: 12px;
-  color: #888;
-  margin-bottom: 5px;
-}
-.no-chat-selected,
-.no-messages {
+.no-messages,
+.no-chat-selected {
   text-align: center;
-  color: #999;
-  margin-top: 20px;
+  padding: 16px;
+  color: gray;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-top: 1px solid gray;
+  resize: none;
+  outline: none;
+}
+
+input[type='text']:focus {
+  border-top-color: #007bff;
 }

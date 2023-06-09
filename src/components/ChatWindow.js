@@ -73,7 +73,7 @@ const ChatWindow = () => {
       </div>
       <div className="chat-messages">
         {selectedChatId ? (
-          <SingleChatView chat={chats.find((chat) => chat.id === selectedChatId)} />
+          <SingleChatView chat={chats.find((chat) => chat.id === selectedChatId)} key={selectedChatId}/>
           
         ) : (
           <div className="no-chat-selected">Select a chat to view messages</div>
